@@ -16,10 +16,12 @@ pipeline {
             }
             post {
                 success {
+                emailext(
                     mail to: "appureejajayadeep@gmail.com",
                     subject: "Unit and Integration Test Status",
                     body: "Unit and Integration tests were successful!",
                     attachLog: true
+                    )
                 }
             }
         }
@@ -38,10 +40,12 @@ pipeline {
             }
             post {
                 success {
+                    emailext(
                     mail to: "appureejajayadeep@gmail.com",
                     subject: "Security Scan Status",
                     body: "Security scan was successful!",
                     attachLog: true
+                    )
                 }
             }
         }
